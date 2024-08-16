@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation bar with accessibility attributes -->
+        <nav class="nav-bar">
+            <div class="name" aria-label="User Name">Alfred Noonoo</div>
+            <div class="action-items">
+                <div class="nav-item active" id="loadData" role="button" aria-label="Load Overall Data" tabindex="0">
+                    Overall Data
+                </div>
+                <div class="nav-item" id="loadNode1" role="button" aria-label="Load Section 1 Data" tabindex="0">
+                    Section 1 Data
+                </div>
+                <div class="nav-item" id="loadNode2" role="button" aria-label="Load Section 2 Data" tabindex="0">
+                    Section 2 Data
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="content">
+            <!-- Graph visualization -->
+            <div class="graph">
+                <svg width="600" height="500"></svg>
+            </div>
+
+            <!-- Table container -->
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Row #</th>
+                            <th>Sensor ID</th>
+                            <th>Location</th>
+                            <th>Water Used</th>
+                            <th>Flow Rate</th>
+                            <th>Time Recorded</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataBody">
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+
+                <!-- Pagination controls -->
+                <div class="pagination">
+                    <button id="prev-btn" aria-label="Previous Page">Previous</button>
+                    <button id="next-btn" aria-label="Next Page">Next</button>
+                    <span id="page-info">Results 1 of 10</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="table.js"></script>
+    <script src="line_graph.js" type="module"></script>
+</body>
+
+</html>
